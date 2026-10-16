@@ -424,6 +424,69 @@ h1 em,h2 em{font-style:normal;color:inherit;background:linear-gradient(var(--ora
 @media(min-width:900px){.shot{height:300px}.cshot{margin:-56px -52px 32px;height:280px}}
 
 
+
+/* ============ celular: más corto, sin repetir ============ */
+.cmp>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:0 18px;border-radius:12px;background:#fff;box-shadow:inset 0 0 0 2px var(--graphite);font-size:.82rem;margin:0 0 12px}
+.cmp>summary::-webkit-details-marker{display:none}
+.cmp>summary::after{content:"+";font-size:1.7rem;line-height:1;color:var(--orange-ink);transition:transform .3s var(--ease)}
+.cmp[open]>summary::after{transform:rotate(45deg)}
+@media(min-width:900px){
+  .cmp>summary{pointer-events:none;cursor:default;background:none;box-shadow:none;padding:0;min-height:0}
+  .cmp>summary::after{display:none}
+}
+@media(max-width:899px){
+  .dk{display:none!important}
+  .sec{--sy:56px;padding-bottom:60px}
+  .sec-head{margin-bottom:26px}
+  h2{font-size:clamp(2.3rem,10vw,3.4rem)}
+  .stats{grid-template-columns:1fr 1fr;column-gap:22px;margin-top:0}
+  .stat{padding:18px 0 16px}
+  .stat .num{font-size:clamp(3.4rem,16vw,4.2rem)}
+  .stat p{font-size:.92rem;margin-top:8px;line-height:1.35}
+  .meter,.ranks,.dots,.legend{display:none}
+  .remate{margin-top:24px;padding:22px 20px}
+  .chat{height:310px}
+  .path{padding:18px 16px;gap:10px}
+  .path h4{font-size:1.7rem}
+  .path li{font-size:.97rem}
+  .cmp{margin-top:22px}
+  .cards2{margin-top:22px}
+  .tl{gap:22px;margin:6px 0 28px}
+  .step h4{font-size:1.5rem}
+  .cshot{height:150px}
+  .close{padding:28px 20px}
+  .foot{margin-top:36px}
+  .kicker{font-size:.72rem;letter-spacing:.12em;margin-bottom:12px}
+  h1{font-size:clamp(2.6rem,11.8vw,3.3rem)}
+  .hero{padding-bottom:28px}
+  .hero .lead{font-size:1.04rem;margin-top:14px}
+  .hero .meta{display:none}
+  .glance{margin-top:16px;gap:8px}
+  .hero .ctas{flex-wrap:nowrap;gap:10px;margin-top:22px}
+  .hero .ctas .btn{flex:1;padding:0 10px;font-size:.95rem;min-height:52px}
+  .hero .ctas .btn .ic-svg{display:none}
+}
+
+
+/* ============ UX en celular: lo que incluye primero ============ */
+html{touch-action:manipulation}
+.glance{list-style:none;display:grid;gap:10px;margin-top:20px}
+.glance li{display:flex;gap:10px;align-items:flex-start;font-size:1.02rem;line-height:1.35;font-weight:700;color:var(--cream)}
+.glance li .ic-svg{margin-top:1px;width:22px;height:22px;padding:3px;border-radius:5px;background:var(--orange);color:var(--graphite);stroke-width:3.4}
+.btn .ic-svg.down{transform:rotate(90deg)}
+.plantabs{margin:0 0 14px;max-width:none}
+.plantabs button{flex:1;justify-content:center;text-align:center;padding:0 6px;font-size:.88rem;min-height:52px}
+.paths .path.med{background:#fff}
+@media(max-width:899px){
+  .paths .path{display:none}
+  .paths .path.on{display:flex;animation:stepIn .4s var(--ease)}
+  .path.med .tag{color:var(--orange-ink)}
+}
+@media(min-width:900px){
+  .mo{display:none!important}
+  .paths .path.med{display:none}
+}
+
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
@@ -472,7 +535,7 @@ h1 em,h2 em{font-style:normal;color:inherit;background:linear-gradient(var(--ora
 <header class="hdr">
   <a class="brand" href="#inicio" aria-label="Driven By People, inicio"><svg viewBox="0 0 1182.52 434.62" role="img" aria-label="Driven By People"><use href="#dbp-logo"/></svg></a>
   <nav aria-label="Secciones">
-    <a href="#numeros">Los números</a><a href="#problemas">Problemas</a><a href="#ficha">Mi ficha</a><a href="#extras">En acción</a><a href="#incluye">Qué incluye</a><a href="#pasos">Próximos pasos</a>
+    <a href="#incluye">Qué incluye</a><a href="#ficha">Mi ficha</a><a href="#numeros">Los números</a><a href="#problemas">Problemas</a><a href="#extras">En acción</a><a href="#pasos">Próximos pasos</a>
   </nav>
   <a class="btn sm" href="#ficha">Armar mi ficha</a>
   <span class="bar" id="bar"></span>
@@ -487,19 +550,131 @@ h1 em,h2 em{font-style:normal;color:inherit;background:linear-gradient(var(--ora
     <div>
       <p class="kicker rv">Propuesta · Ferreterías de Córdoba</p>
       <h1 class="rv" style="--d:1">Hacé que te <em>encuentren</em> antes de que compren en otro lado</h1>
-      <p class="lead rv" style="--d:2">Cuando alguien busca una ferretería cerca, una herramienta o una marca, tu negocio debería aparecer con la información que necesita para decidir.</p>
-      <p class="lead rv" style="--d:3;margin-top:14px"><b>Te ayudamos a mostrar qué vendés, dónde estás, cuándo abrís y cómo consultarte directo por WhatsApp.</b></p>
+      <p class="lead rv" style="--d:2">Cuando alguien busca una ferretería cerca, tu negocio debería aparecer con lo que necesita para decidir. <b>Te ayudamos a mostrar qué vendés, dónde estás y cómo consultarte por WhatsApp.</b></p>
+      <ul class="glance mo rv" style="--d:3">
+        <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Página propia con tus rubros, marcas y envíos</li>
+        <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Tu ficha de Google en orden</li>
+        <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Consulta directa por WhatsApp</li>
+      </ul>
       <div class="ctas rv" style="--d:4">
-        <a class="btn" href="#ficha">Quiero ver cómo quedaría mi ferretería <svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
-        <a class="btn ghost" href="#numeros">Ver la propuesta</a>
+        <a class="btn" href="#incluye">Ver qué incluye <svg class="ic-svg down" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+        <a class="btn ghost" href="#ficha">Probar mi ficha</a>
       </div>
       <p class="meta rv" style="--d:5">Preparado por Driven By People · <span data-cfg="fecha">Octubre 2026</span></p>
     </div>
-    <div class="srch rv" style="--d:3" id="srch" aria-label="Ejemplo de cómo te ve un cliente que busca">
+    <div class="srch rv dk" style="--d:3" id="srch" aria-label="Ejemplo de cómo te ve un cliente que busca">
       <div class="srch-bar" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-search"/></svg><span id="srchText"></span><i class="caret"></i></div>
       <div class="fcard" id="heroCard"></div>
       <div class="qchips" id="qchips" aria-hidden="true"></div>
     </div>
+  </div>
+</section>
+
+<!-- ===================== 6 · QUÉ INCLUYE ===================== -->
+<section class="sec cream" id="incluye">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker rv">Qué incluye</p>
+      <h2 class="rv" style="--d:1">Elegí por dónde empezar</h2>
+      <p class="lead rv dk" style="--d:2">Mantener un catálogo completo, con precios y stock al día, es otro trabajo más. Alcanza con que <b>el cliente pueda encontrarte, entender qué trabajás y preguntarte directo.</b></p>
+    </div>
+    <div class="inc-grid">
+      <div class="dk">
+        <p class="sub" style="margin-top:0">No hace falta</p>
+        <ul class="nolist rv">
+          <li style="--d:0"><span>Una tienda online enorme</span></li>
+          <li style="--d:1"><span>Cargar miles de productos</span></li>
+          <li style="--d:2"><span>Mantener precios y stock al día</span></li>
+          <li style="--d:3"><span>Cambiar cómo trabajás</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="seg plantabs mo" role="tablist" aria-label="Planes">
+          <button type="button" role="tab" aria-selected="true" data-ptab="ficha">Ficha propia</button>
+          <button type="button" role="tab" aria-selected="false" data-ptab="catalogo">Catálogo y pedidos</button>
+          <button type="button" role="tab" aria-selected="false" data-ptab="medida">A medida</button>
+        </div>
+        <div class="paths rv">
+          <article class="path on" data-card="ficha">
+            <span class="tag">Plan Ficha propia</span>
+            <h4>Ya me conocen en Google, pero no me consultan</h4>
+            <ul>
+              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Página propia con ubicación, horarios, rubros, marcas, pagos y envíos</li>
+              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Tu calificación de Google a la vista</li>
+              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Consulta directa por WhatsApp</li>
+            </ul>
+            <button type="button" class="btn" data-plan="ficha">Quiero mi ficha propia <svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button>
+          </article>
+          <article class="path full" data-card="catalogo">
+            <span class="tag">Plan Catálogo y pedidos</span>
+            <h4>Ya me piden cosas por WhatsApp y quiero ordenarlo</h4>
+            <ul>
+              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Todo lo de Ficha propia</li>
+              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Tus productos y marcas más vendidos, con foto</li>
+              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>El cliente arma su pedido y te lo manda por WhatsApp</li>
+            </ul>
+            <button type="button" class="btn" data-plan="catalogo">Quiero catálogo y pedidos <svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button>
+          </article>
+          <article class="path med" data-card="medida">
+            <span class="tag">Plan a medida</span>
+            <h4>Quiero ordenar presupuestos, listas de precios y tareas repetitivas</h4>
+            <ul>
+              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Primero analizamos cómo funciona hoy tu negocio</li>
+              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Después definimos qué conviene automatizar</li>
+              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>El valor depende del alcance de cada caso</li>
+            </ul>
+            <button type="button" class="btn" data-plan="medida">Contanos qué necesitás <svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button>
+          </article>
+        </div>
+        <p class="more rv dk">Y si más adelante querés ordenar presupuestos, listas de precios o tareas repetitivas, lo trabajamos a medida. <button type="button" data-plan="medida">Contanos qué necesitás</button></p>
+      </div>
+    </div>
+    <details class="cmp rv" id="cmpd">
+      <summary class="sub">Comparar qué incluye cada plan</summary>
+      <table>
+        <caption class="sr">Comparación de lo que incluye cada plan</caption>
+        <colgroup><col><col class="c"><col class="c"><col class="c"></colgroup>
+        <thead><tr><th scope="col">Incluye</th><th scope="col">Ficha propia</th><th scope="col">Catálogo y pedidos</th><th scope="col">Conectado</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Ficha de Google ordenada</th><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
+          <tr><th scope="row">Página propia: rubros, marcas, pagos y envíos</th><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
+          <tr><th scope="row">Tu calificación de Google a la vista</th><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
+          <tr><th scope="row">Consulta directa por WhatsApp</th><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
+          <tr><th scope="row">Productos y marcas más vendidos</th><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
+          <tr><th scope="row">Pedido armado por el cliente, por WhatsApp</th><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
+          <tr><th scope="row">Análisis de tu negocio</th><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
+          <tr><th scope="row">Presupuestos y tareas repetitivas</th><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
+          <tr><th scope="row">Mantenimiento mensual</th><td><span class="mtn">opcional</span></td><td><span class="mtn">opcional</span></td><td><span class="mtn">a medida</span></td></tr>
+        </tbody>
+      </table>
+    </details>
+    <div class="cards2">
+      <div class="info ideal rv dk"><h4>Ideal para</h4><p>Ferreterías que ya tienen clientes, buenas opiniones y presencia en Google, pero que todavía dependen del local, el teléfono, WhatsApp o las redes. No buscamos cambiar cómo trabajás: buscamos que lleguen más fácil hasta vos.</p></div>
+      <div class="info inv rv" style="--d:1">
+        <h4>Lo que seguro te preguntás</h4>
+        <dl class="qa">
+          <div><dt>¿Tiene costo ver cómo quedaría?</dt><dd>No. Primero te mostramos tu ferretería y después decidís.</dd></div>
+          <div><dt>¿Cuánto sale?</dt><dd>Depende del plan que elijas. Te pasamos los valores por WhatsApp, claros y sin vueltas.</dd></div>
+          <div><dt>¿Y el mantenimiento?</dt><dd>Es opcional. Sirve para que horarios, marcas y datos sigan al día sin que te ocupes.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4 · DEMO FICHA ===================== -->
+<section class="sec white" id="ficha">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker rv">Demo interactiva</p>
+      <h2 class="rv" style="--d:1">Armá tu ficha en 7 respuestas</h2>
+      <p class="lead rv" style="--d:2">Respondé las 7 preguntas de quien te busca y mirá cómo se arma tu ficha.</p>
+    </div>
+    <div class="stage rv">
+      <div class="fcard live" id="demoCard"></div>
+      <div class="wz" id="wz" aria-live="polite"></div>
+    </div>
+    <p class="src dk">Vista de ejemplo con datos ilustrativos, sin logos ni interfaz de ningún buscador. En la propuesta real se arma con la información verificada de tu negocio.</p>
   </div>
 </section>
 
@@ -511,7 +686,7 @@ h1 em,h2 em{font-style:normal;color:inherit;background:linear-gradient(var(--ora
       <div class="sec-head">
         <p class="kicker rv">Tus clientes ya buscan</p>
         <h2 class="rv" style="--d:1">Buscan antes de salir de casa</h2>
-        <p class="lead rv" style="--d:2">Herramientas y construcción ya es una categoría digital enorme. La oportunidad no es vender por Internet: es que <b>también te encuentren cuando quieren comprar cerca.</b></p>
+        <p class="lead rv dk" style="--d:2">La oportunidad no es vender por Internet: es que <b>también te encuentren cuando quieren comprar cerca.</b></p>
       </div>
     </div>
   </div>
@@ -541,41 +716,30 @@ h1 em,h2 em{font-style:normal;color:inherit;background:linear-gradient(var(--ora
     </div>
     <div class="remate rv">
       <p>No hace falta convertir tu ferretería en una <b>tienda online.</b></p>
-      <span>Hace falta que, cuando alguien busque lo que vendés, pueda encontrarte, saber si lo trabajás y consultarte.</span>
+      <span class="dk">Hace falta que, cuando alguien busque lo que vendés, pueda encontrarte, saber si lo trabajás y consultarte.</span>
     </div>
     <p class="src">Fuentes: CACE, Estudio Anual 2025 (1.100 compradores online de Argentina, de 18 a 65 años, que compraron en los últimos 6 meses) y Mid Term 2026. Relevamiento propio de Driven By People en ferreterías de Córdoba Capital.</p>
   </div>
 </section>
 
 <!-- ===================== 3 · PROBLEMAS ===================== -->
-<section class="sec white" id="problemas">
-  <div class="wrap">
+<section class="sec cream" id="problemas">
+  <div class="pband" style="--pos:50% 55%;--veil:.78">
+    <img src="assets/ferreteria-materiales-envio-1400.webp" srcset="assets/ferreteria-materiales-envio-800.webp 800w, assets/ferreteria-materiales-envio-1400.webp 1400w" sizes="100vw" width="1400" height="788" alt="" loading="lazy" decoding="async">
+    <div class="wrap">
     <div class="sec-head">
       <p class="kicker rv">Lo que ve hoy quien te busca</p>
       <h2 class="rv" style="--d:1">Que tu ferretería no dependa solo del cartel de la esquina</h2>
-      <p class="lead rv" style="--d:2">Podés tener años de experiencia, buenos precios y clientes que te recomiendan. Pero alguien que todavía no te conoce <b>primero te ve en Google.</b> Y ahí aparecen problemas muy simples.</p>
+      <p class="lead rv dk" style="--d:2">Alguien que todavía no te conoce <b>primero te ve en Google.</b> Y ahí aparecen problemas muy simples.</p>
     </div>
-    <div class="car rv" id="car" aria-label="Problemas frecuentes. Tocá cada tarjeta para ver cómo se resuelve"></div>
-    <div class="car-foot rv">
-      <span class="cnt">Resueltos: <b id="flipCnt">0</b> de 7</span>
-      <span class="swipe">Deslizá <svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
     </div>
   </div>
-</section>
-
-<!-- ===================== 4 · DEMO FICHA ===================== -->
-<section class="sec cream" id="ficha">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="kicker rv">Demo interactiva</p>
-      <h2 class="rv" style="--d:1">Armá tu ficha en 7 respuestas</h2>
-      <p class="lead rv" style="--d:2">Estas son las preguntas que se hace quien te busca. Respondelas y mirá cómo se completa lo que ve el cliente.</p>
+    <div class="car rv" style="margin-top:18px" id="car" aria-label="Problemas frecuentes. Tocá cada tarjeta para ver cómo se resuelve"></div>
+    <div class="car-foot rv">
+      <span class="cnt">Resueltos: <b id="flipCnt">0</b> de 6</span>
+      <span class="swipe">Deslizá <svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
     </div>
-    <div class="stage rv">
-      <div class="fcard live" id="demoCard"></div>
-      <div class="wz" id="wz" aria-live="polite"></div>
-    </div>
-    <p class="src">Vista de ejemplo con datos ilustrativos, sin logos ni interfaz de ningún buscador. En la propuesta real se arma con la información verificada de tu negocio.</p>
   </div>
 </section>
 
@@ -593,10 +757,10 @@ h1 em,h2 em{font-style:normal;color:inherit;background:linear-gradient(var(--ora
 
     <div class="panel two" id="pa" role="tabpanel" aria-labelledby="tab-a">
       <div>
-        <img class="shot" src="assets/ferretero-mostrador-1400.webp" srcset="assets/ferretero-mostrador-800.webp 800w, assets/ferretero-mostrador-1400.webp 1400w" sizes="(min-width:900px) 560px, 100vw" width="1400" height="788" alt="Ferretero mostrando una pieza a un cliente en el mostrador" loading="lazy" decoding="async">
+        <img class="shot dk" src="assets/ferretero-mostrador-1400.webp" srcset="assets/ferretero-mostrador-800.webp 800w, assets/ferretero-mostrador-1400.webp 1400w" sizes="(min-width:900px) 560px, 100vw" width="1400" height="788" alt="Ferretero mostrando una pieza a un cliente en el mostrador" loading="lazy" decoding="async">
         <h3>“No sé cómo se llama, pero necesito esto”</h3>
-        <p class="lead" style="margin-top:14px">Un cliente necesita una pieza, un repuesto o una herramienta y no sabe qué pedir. Que te mande una foto y te consulte directo por WhatsApp.</p>
-        <p class="lead" style="margin-top:14px;font-weight:700;color:var(--graphite)">Menos vueltas para el cliente. Más oportunidades de venta para vos.</p>
+        <p class="lead" style="margin-top:14px">Que te mande una foto de la pieza y te consulte directo por WhatsApp.</p>
+        <p class="lead dk" style="margin-top:14px;font-weight:700;color:var(--graphite)">Menos vueltas para el cliente. Más oportunidades de venta para vos.</p>
       </div>
       <div>
         <div class="phone" aria-label="Ejemplo de conversación por WhatsApp">
@@ -612,10 +776,10 @@ h1 em,h2 em{font-style:normal;color:inherit;background:linear-gradient(var(--ora
 
     <div class="panel two" id="pb" role="tabpanel" aria-labelledby="tab-b" hidden>
       <div>
-        <img class="shot" src="assets/ferretero-celular-1400.webp" srcset="assets/ferretero-celular-800.webp 800w, assets/ferretero-celular-1400.webp 1400w" sizes="(min-width:900px) 560px, 100vw" width="1400" height="788" alt="Ferretero sonriendo mientras responde un mensaje en el celular" loading="lazy" decoding="async">
+        <img class="shot dk" src="assets/ferretero-celular-1400.webp" srcset="assets/ferretero-celular-800.webp 800w, assets/ferretero-celular-1400.webp 1400w" sizes="(min-width:900px) 560px, 100vw" width="1400" height="788" alt="Ferretero sonriendo mientras responde un mensaje en el celular" loading="lazy" decoding="async">
         <h3>Tu negocio puede estar abierto aunque el local esté cerrado</h3>
-        <p class="lead" style="margin-top:14px">No para vender a las tres de la mañana. Para que alguien pueda encontrarte a cualquier hora, saber qué trabajás y dejar preparada una consulta para cuando abras.</p>
-        <p class="tnote" style="margin-top:18px">Horario de ejemplo: <b id="tSched">corrido, de 8:00 a 20:00</b>. <button type="button" id="tChange">Cambiarlo en mi ficha</button></p>
+        <p class="lead" style="margin-top:14px">Que alguien te encuentre a cualquier hora y deje su consulta para cuando abras.</p>
+        <p class="tnote dk" style="margin-top:18px">Horario de ejemplo: <b id="tSched">corrido, de 8:00 a 20:00</b>. <button type="button" id="tChange">Cambiarlo en mi ficha</button></p>
       </div>
       <div>
         <div class="sky" id="sky"><div class="clock" id="clock">11:00<small>hs</small></div><div class="orb" id="orb"></div><div class="ground"></div></div>
@@ -632,91 +796,6 @@ h1 em,h2 em{font-style:normal;color:inherit;background:linear-gradient(var(--ora
   </div>
 </section>
 
-<!-- ===================== 6 · QUÉ INCLUYE ===================== -->
-<section class="sec cream" id="incluye">
-  <div class="pband" style="--pos:50% 55%;--veil:.78">
-    <img src="assets/ferreteria-materiales-envio-1400.webp" srcset="assets/ferreteria-materiales-envio-800.webp 800w, assets/ferreteria-materiales-envio-1400.webp 1400w" sizes="100vw" width="1400" height="788" alt="" loading="lazy" decoding="async">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker rv">Qué incluye</p>
-        <h2 class="rv" style="--d:1">No necesitás una tienda online enorme</h2>
-        <p class="lead rv" style="--d:2">Una ferretería puede manejar cientos o miles de productos. Mantener un catálogo completo, con precios y stock al día, es otro trabajo más. La idea es más simple: <b>que el cliente pueda encontrarte, entender qué trabajás y preguntarte directo.</b></p>
-      </div>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="inc-grid" style="margin-top:36px">
-      <div>
-        <p class="sub" style="margin-top:0">No hace falta</p>
-        <ul class="nolist rv">
-          <li style="--d:0"><span>Una tienda online enorme</span></li>
-          <li style="--d:1"><span>Cargar miles de productos</span></li>
-          <li style="--d:2"><span>Mantener precios y stock al día</span></li>
-          <li style="--d:3"><span>Cambiar cómo trabajás</span></li>
-        </ul>
-      </div>
-      <div>
-        <p class="sub">Elegí por dónde empezar</p>
-        <div class="paths">
-          <article class="path rv">
-            <span class="tag">Plan Ficha propia</span>
-            <h4>Ya me conocen en Google, pero no me consultan</h4>
-            <ul>
-              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Una página propia con tu ubicación, horarios, rubros, marcas, formas de pago y envíos</li>
-              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Tu calificación de Google a la vista, para que te elijan</li>
-              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Consulta directa por WhatsApp</li>
-              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Tu ficha de Google revisada y ordenada, incluida</li>
-            </ul>
-            <button type="button" class="btn" data-plan="ficha">Quiero mi ficha propia <svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button>
-          </article>
-          <article class="path full rv" style="--d:1">
-            <span class="tag">Plan Catálogo y pedidos · el más completo</span>
-            <h4>Ya me piden cosas por WhatsApp y quiero ordenarlo</h4>
-            <ul>
-              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Todo lo del plan Ficha propia</li>
-              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Tus productos y marcas más vendidos, por rubro, con foto</li>
-              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>El cliente arma su pedido y te lo manda por WhatsApp</li>
-              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Sin cargar miles de productos ni armar una tienda online</li>
-            </ul>
-            <button type="button" class="btn" data-plan="catalogo">Quiero catálogo y pedidos <svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button>
-          </article>
-        </div>
-        <p class="more rv">Y si más adelante querés ordenar presupuestos, listas de precios o tareas repetitivas, lo trabajamos a medida. <button type="button" data-plan="medida">Contanos qué necesitás</button></p>
-      </div>
-    </div>
-    <div class="cmp rv">
-      <p class="sub">Qué incluye cada plan</p>
-      <table>
-        <caption class="sr">Comparación de lo que incluye cada plan</caption>
-        <colgroup><col><col class="c"><col class="c"><col class="c"></colgroup>
-        <thead><tr><th scope="col">Incluye</th><th scope="col">Ficha propia</th><th scope="col">Catálogo y pedidos</th><th scope="col">Conectado</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Ficha de Google ordenada</th><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
-          <tr><th scope="row">Página propia: rubros, marcas, pagos y envíos</th><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
-          <tr><th scope="row">Tu calificación de Google a la vista</th><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
-          <tr><th scope="row">Consulta directa por WhatsApp</th><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
-          <tr><th scope="row">Productos y marcas más vendidos</th><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
-          <tr><th scope="row">Pedido armado por el cliente, por WhatsApp</th><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
-          <tr><th scope="row">Análisis de tu negocio</th><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
-          <tr><th scope="row">Presupuestos y tareas repetitivas</th><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
-          <tr><th scope="row">Mantenimiento mensual</th><td><span class="mtn">opcional</span></td><td><span class="mtn">opcional</span></td><td><span class="mtn">a medida</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="cards2">
-      <div class="info ideal rv"><h4>Ideal para</h4><p>Ferreterías que ya tienen clientes, buenas opiniones y presencia en Google, pero que todavía dependen del local, el teléfono, WhatsApp o las redes. No buscamos cambiar cómo trabajás: buscamos que lleguen más fácil hasta vos.</p></div>
-      <div class="info inv rv" style="--d:1">
-        <h4>Lo que seguro te preguntás</h4>
-        <dl class="qa">
-          <div><dt>¿Tiene costo ver cómo quedaría?</dt><dd>No. Primero te mostramos tu ferretería y después decidís.</dd></div>
-          <div><dt>¿Cuánto sale?</dt><dd>Depende del plan que elijas. Te pasamos los valores por WhatsApp, claros y sin vueltas.</dd></div>
-          <div><dt>¿Y el mantenimiento?</dt><dd>Es opcional. Sirve para que horarios, marcas y datos sigan al día sin que te ocupes.</dd></div>
-        </dl>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== 7 · PRÓXIMOS PASOS ===================== -->
 <section class="sec dark" id="pasos">
   <div class="wrap">
@@ -728,20 +807,20 @@ h1 em,h2 em{font-style:normal;color:inherit;background:linear-gradient(var(--ora
         </div>
         <div class="tl rv" id="tl">
           <span class="ln"></span>
-          <div class="step"><span class="n">1</span><h4>Relevamiento</h4><p>Vemos cómo te encuentran hoy: tu ficha en Google, tus horarios, tus marcas y cómo te consultan. Y te mostramos cómo quedaría, sin costo.</p></div>
-          <div class="step"><span class="n">2</span><h4>Armado</h4><p>Armamos tu ficha y tu página con tu información. Vos la revisás y la aprobás.</p></div>
-          <div class="step"><span class="n">3</span><h4>En marcha</h4><p data-cfg="plazo">Queda funcionando y ajustamos lo que haga falta. Si querés, un mantenimiento mensual lo mantiene al día.</p></div>
+          <div class="step"><span class="n">1</span><h4>Vista previa</h4><p>Vemos cómo te encuentran hoy y te mostramos cómo quedaría. Sin costo.</p></div>
+          <div class="step"><span class="n">2</span><h4>Armado</h4><p>Armamos tu ficha. Vos la revisás y la aprobás.</p></div>
+          <div class="step"><span class="n">3</span><h4>En marcha</h4><p data-cfg="plazo">Queda funcionando. Si querés, un mantenimiento mensual la mantiene al día.</p></div>
         </div>
       </div>
       <div id="contacto">
         <div class="close rv">
           <div class="cshot"><img src="assets/ferretero-bienvenida-1400.webp" srcset="assets/ferretero-bienvenida-800.webp 800w, assets/ferretero-bienvenida-1400.webp 1400w" sizes="(min-width:900px) 560px, 100vw" width="1400" height="788" alt="Ferretero recibiendo a un cliente en la puerta de su local" loading="lazy" decoding="async"></div>
           <h3>Tu ferretería, más fácil de encontrar</h3>
-          <p>No se trata de hacer una página porque “hay que tener página”. Se trata de que cuando alguien necesite algo que vos vendés, tenga más posibilidades de encontrarte a vos.</p>
+          <p class="dk">No se trata de hacer una página porque “hay que tener página”. Se trata de que cuando alguien necesite algo que vos vendés, tenga más posibilidades de encontrarte a vos.</p>
           <p class="tagline">Google + información clara + WhatsApp. Simple.</p>
           <div class="ctas">
             <a class="btn main" href="#" data-wa>Quiero mejorar la presencia de mi ferretería <svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
-            <a class="btn ghost" href="#ficha">Armar mi ficha</a>
+            <a class="btn ghost dk" href="#ficha">Armar mi ficha</a>
           </div>
         </div>
       </div>
@@ -768,7 +847,7 @@ const CONFIG = {
   whatsapp: '5493513294903',   // +54 9 351 329-4903 (código de país, sin + ni espacios)
   mensajeBase: 'Hola! Vi la propuesta de Driven By People para ferreterías y quiero mejorar cómo me encuentran mis clientes.',
   fecha: 'Octubre 2026',
-  plazo: 'Queda funcionando y ajustamos lo que haga falta. Si querés, un mantenimiento mensual lo mantiene al día.'   // PENDIENTE: plazos en días
+  plazo: 'Queda funcionando. Si querés, un mantenimiento mensual la mantiene al día.'   // PENDIENTE: plazos en días
 };
 
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -797,6 +876,11 @@ const PLANS = {
   catalogo: 'Me interesa el plan Catálogo y pedidos: mis productos más vendidos y que mis clientes armen su pedido por WhatsApp.',
   medida: 'Me interesa una solución a medida: ordenar presupuestos, listas de precios o tareas repetitivas.'
 };
+const planTabs = $$('[data-ptab]');
+planTabs.forEach(b => b.addEventListener('click', () => {
+  planTabs.forEach(x => x.setAttribute('aria-selected', x === b));
+  $$('.paths .path').forEach(c => c.classList.toggle('on', c.dataset.card === b.dataset.ptab));
+}));
 $$('[data-plan]').forEach(b => b.addEventListener('click', () => openWA(CONFIG.mensajeBase + '\n\n' + PLANS[b.dataset.plan])));
 const fmt = h => { const hh = Math.floor(h), mm = Math.round((h - hh) * 60); return hh + ':' + String(mm).padStart(2, '0'); };
 const list = (a, n) => a.length <= n ? a.join(', ').replace(/, ([^,]*)$/, ' y $1') : a.slice(0, n).join(', ') + ' y ' + (a.length - n) + ' más';
@@ -959,15 +1043,14 @@ const PROBLEMS = [
   { ic: 'grid',    p: 'La gente no sabe todo lo que vendemos.',                 s: 'Organizamos tus principales productos y rubros de forma simple.' },
   { ic: 'globe',   p: 'Me encuentran en Google pero no tengo página.',          s: 'Creamos un lugar propio al que Google pueda enviar clientes.' },
   { ic: 'layers',  p: 'Tengo Instagram, pero ahí está todo mezclado.',          s: 'Centralizamos la información comercial importante.' },
-  { ic: 'chat',    p: 'Vienen clientes y justo no tenemos lo que buscaban.',    s: 'Les damos una forma simple de consultar antes de trasladarse.' },
-  { ic: 'refresh', p: 'Google tiene mal mis horarios o información vieja.',     s: 'Revisamos y ordenamos tu presencia digital.' }
+  { ic: 'chat',    p: 'Vienen clientes y justo no tenemos lo que buscaban.',    s: 'Les damos una forma simple de consultar antes de trasladarse.' }
 ];
 const car = $('#car');
 car.innerHTML = PROBLEMS.map((x, i) => `
   <div class="flip"><button type="button" aria-pressed="false" aria-label="${x.p} Tocá para ver cómo se resuelve">
     <span class="in">
       <span class="face front"><span class="ico">${ICON(x.ic)}</span><span class="big">“${x.p}”</span><span class="hint">${ICON('refresh')}Tocá para ver la solución</span></span>
-      <span class="face back"><span class="ico">${ICON('check')}</span><span class="big">${x.s}</span><span class="tag">Problema ${i + 1} de 7 resuelto</span></span>
+      <span class="face back"><span class="ico">${ICON('check')}</span><span class="big">${x.s}</span><span class="tag">Problema ${i + 1} de ${PROBLEMS.length} resuelto</span></span>
     </span>
   </button></div>`).join('') + `
   <div class="flip cta"><a href="#ficha"><span class="in"><span class="face"><span class="ico">${ICON('arrow')}</span><span class="big">Todo esto se resuelve con una ficha completa.</span><span class="go">Armar mi ficha ${ICON('arrow')}</span></span></span></a></div>`;
@@ -1164,6 +1247,7 @@ $('#tBtn').addEventListener('click', () => {
 
 /* ================== arranque ================== */
 renderStep();
+if (matchMedia('(min-width: 900px)').matches) { const d = $('#cmpd'); if (d) d.open = true; }
 })();
 </script>
 </body>
