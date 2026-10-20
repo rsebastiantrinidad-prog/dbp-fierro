@@ -487,6 +487,81 @@ html{touch-action:manipulation}
   .paths .path.med{display:none}
 }
 
+
+/* ============ v2 · de la vidriera al mostrador ============ */
+.chat{justify-content:flex-start;overflow-y:auto}
+.chat>:first-child{margin-top:auto}
+.b.q{display:grid;gap:8px;max-width:94%}
+.b.q .qt{font-weight:700}
+.chs{display:flex;flex-wrap:wrap;gap:6px}
+.qb{min-height:40px;padding:0 12px;border-radius:8px;background:var(--cream);box-shadow:inset 0 0 0 2px var(--graphite);font-weight:700;font-size:.88rem;color:var(--graphite);text-align:center}
+.qb.pre{box-shadow:inset 0 0 0 3px var(--orange)}
+.qb.sel{background:var(--orange)}
+.qb:disabled{opacity:.5;cursor:default}
+.qb.sel:disabled{opacity:1}
+.draft{align-self:center;display:grid;gap:10px;justify-items:center;background:#fff;border-radius:12px;box-shadow:inset 0 0 0 2px var(--line);padding:12px;width:94%}
+.draft svg{width:100%;border-radius:8px;display:block}
+.draft small{font-size:.72rem;color:var(--muted);font-weight:700}
+.draft .btn{width:100%;min-height:46px}
+.gorow{margin-top:14px;display:flex;justify-content:center}
+.gorow .btn{width:100%}
+.goown .ic-svg.down{transform:rotate(90deg)}
+.chat.mini{height:auto;max-height:none;min-height:0;margin-top:12px;border-radius:12px;box-shadow:inset 0 0 0 2px var(--line);padding:10px;overflow:visible;background:var(--cream)}
+.chat.mini:empty{display:none}
+.own{align-items:start}
+.own-copy{list-style:none;counter-reset:o;display:grid;gap:18px;max-width:42ch}
+.own-copy li{counter-increment:o;position:relative;padding-left:52px;font-size:1.08rem;line-height:1.45;color:var(--muted)}
+.own-copy li::before{content:counter(o);position:absolute;left:0;top:-2px;width:38px;height:38px;border-radius:8px;background:var(--orange);color:var(--graphite);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.5rem}
+.own-copy b{color:var(--graphite)}
+.own-phone .ph-top .badge{margin-left:auto}
+.badge{background:var(--orange);color:var(--graphite);font-weight:700;font-size:.78rem;padding:4px 10px;border-radius:99px;white-space:nowrap}
+.badge.bump{animation:bump .6s var(--ease)}
+@keyframes bump{40%{transform:scale(1.25)}}
+.offb{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--orange);color:var(--graphite);padding:10px 14px;font-weight:700;font-size:.9rem;line-height:1.3}
+.offb button{font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap;min-height:36px}
+.sumrow{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:12px 12px 6px;background:var(--cream)}
+.sumrow .sm{background:#fff;border-radius:8px;box-shadow:inset 0 0 0 2px var(--line);text-align:center;padding:8px 2px}
+.sumrow .sm b{display:block;font-family:var(--display);font-weight:800;font-size:1.7rem;line-height:1}
+.sumrow .sm span{display:block;font-size:.64rem;line-height:1.1;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+.sumrow .note{grid-column:1/-1;display:flex;justify-content:space-between;gap:8px;font-size:.72rem;font-weight:700;color:var(--muted)}
+.sumrow .note i{font-style:normal;color:var(--orange-ink)}
+.toolrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 12px;background:var(--cream);font-size:.8rem;color:var(--muted);font-weight:700}
+.tray{display:grid;gap:10px;padding:6px 12px 14px;background:var(--cream);min-height:120px}
+.tc{background:#fff;border-radius:12px;box-shadow:inset 0 0 0 2px var(--graphite);padding:12px;display:grid;gap:8px;text-align:left}
+.tc:focus{outline:3px solid var(--orange);outline-offset:2px}
+.tc.flash{animation:flash 1.8s var(--ease)}
+@keyframes flash{0%,55%{box-shadow:inset 0 0 0 2px var(--graphite),0 0 0 5px var(--orange)}100%{box-shadow:inset 0 0 0 2px var(--graphite),0 0 0 0 rgba(242,140,40,0)}}
+.tc .th{display:flex;align-items:center;gap:10px}
+.tc .ti{width:34px;height:34px;border-radius:8px;background:var(--orange);color:var(--graphite);display:grid;place-items:center;font-size:18px;flex:none}
+.tc .tt{font-weight:700;line-height:1.2;flex:1;min-width:0}
+.pill{font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.pill.s-nueva{background:var(--orange);color:var(--graphite)}
+.pill.s-respondida{background:var(--cream);color:var(--graphite);box-shadow:inset 0 0 0 1.5px var(--graphite)}
+.pill.s-presupuestada{background:var(--graphite);color:var(--cream)}
+.pill.s-vendida{background:var(--ok);color:#fff}
+.pill.s-perdida{background:var(--warn);color:#fff}
+.tc .tm{font-size:.84rem;color:var(--muted);line-height:1.35}
+.tc .thumb{width:84px;border-radius:8px;overflow:hidden}
+.tc .thumb svg{display:block;width:100%}
+.tc .ta,.tc .why{display:flex;flex-wrap:wrap;gap:6px}
+.tc .ta button,.tc .why button{min-height:40px;padding:0 12px;border-radius:8px;font-weight:700;font-size:.84rem;box-shadow:inset 0 0 0 2px var(--graphite);background:#fff;color:var(--graphite)}
+.tc .ta button.pri{background:var(--orange)}
+.tc .ta button.bad,.tc .why button{box-shadow:inset 0 0 0 2px var(--warn);color:var(--warn)}
+.tc .ask{font-size:.82rem;font-weight:700}
+.tc .tmsg{background:var(--cream);border-radius:8px;padding:8px 10px;font-size:.84rem;line-height:1.4}
+.tc .tmsg small{display:block;color:var(--muted);margin-top:4px;font-size:.72rem}
+.tc .tfu{background:rgba(242,140,40,.16);border-radius:8px;padding:8px 10px;font-size:.84rem;line-height:1.4;box-shadow:inset 0 0 0 1.5px var(--orange)}
+.tc .tfu b{display:block}
+.tc .tfu button{margin-top:6px;min-height:40px;padding:0 14px;border-radius:8px;background:var(--orange);font-weight:700;color:var(--graphite)}
+.tc .ill{font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:899px){
+  #extrasTabs button{padding:0 4px;text-align:center;font-size:.84rem}
+  .chat{height:330px}
+}
+@media(min-width:900px){
+  .own{grid-template-columns:1fr 380px;gap:72px;align-items:start}
+}
+
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
@@ -535,7 +610,7 @@ html{touch-action:manipulation}
 <header class="hdr">
   <a class="brand" href="#inicio" aria-label="Driven By People, inicio"><svg viewBox="0 0 1182.52 434.62" role="img" aria-label="Driven By People"><use href="#dbp-logo"/></svg></a>
   <nav aria-label="Secciones">
-    <a href="#incluye">Qué incluye</a><a href="#ficha">Mi ficha</a><a href="#numeros">Los números</a><a href="#problemas">Problemas</a><a href="#extras">En acción</a><a href="#pasos">Próximos pasos</a>
+    <a href="#incluye">Qué incluye</a><a href="#ficha">Mi ficha</a><a href="#numeros">Los números</a><a href="#problemas">Problemas</a><a href="#extras">En acción</a><a href="#dueno">El dueño</a><a href="#pasos">Próximos pasos</a>
   </nav>
   <a class="btn sm" href="#ficha">Armar mi ficha</a>
   <span class="bar" id="bar"></span>
@@ -596,7 +671,7 @@ html{touch-action:manipulation}
         </div>
         <div class="paths rv">
           <article class="path on" data-card="ficha">
-            <span class="tag">Plan Ficha propia</span>
+            <span class="tag">Plan Ficha propia · pago único</span>
             <h4>Ya me conocen en Google, pero no me consultan</h4>
             <ul>
               <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Página propia con ubicación, horarios, rubros, marcas, pagos y envíos</li>
@@ -606,12 +681,12 @@ html{touch-action:manipulation}
             <button type="button" class="btn" data-plan="ficha">Quiero mi ficha propia <svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button>
           </article>
           <article class="path full" data-card="catalogo">
-            <span class="tag">Plan Catálogo y pedidos</span>
+            <span class="tag">Plan Catálogo y pedidos · abono mensual</span>
             <h4>Ya me piden cosas por WhatsApp y quiero ordenarlo</h4>
             <ul>
               <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Todo lo de Ficha propia</li>
-              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Tus productos y marcas más vendidos, con foto</li>
-              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>El cliente arma su pedido y te lo manda por WhatsApp</li>
+              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Tus productos y marcas más vendidos, con pedido por WhatsApp</li>
+              <li><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg>Bandeja de consultas con estado y seguimiento</li>
             </ul>
             <button type="button" class="btn" data-plan="catalogo">Quiero catálogo y pedidos <svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button>
           </article>
@@ -634,7 +709,7 @@ html{touch-action:manipulation}
       <table>
         <caption class="sr">Comparación de lo que incluye cada plan</caption>
         <colgroup><col><col class="c"><col class="c"><col class="c"></colgroup>
-        <thead><tr><th scope="col">Incluye</th><th scope="col">Ficha propia</th><th scope="col">Catálogo y pedidos</th><th scope="col">Conectado</th></tr></thead>
+        <thead><tr><th scope="col">Incluye</th><th scope="col">Ficha propia</th><th scope="col">Catálogo y pedidos</th><th scope="col">A medida</th></tr></thead>
         <tbody>
           <tr><th scope="row">Ficha de Google ordenada</th><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
           <tr><th scope="row">Página propia: rubros, marcas, pagos y envíos</th><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
@@ -644,7 +719,8 @@ html{touch-action:manipulation}
           <tr><th scope="row">Pedido armado por el cliente, por WhatsApp</th><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
           <tr><th scope="row">Análisis de tu negocio</th><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
           <tr><th scope="row">Presupuestos y tareas repetitivas</th><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
-          <tr><th scope="row">Mantenimiento mensual</th><td><span class="mtn">opcional</span></td><td><span class="mtn">opcional</span></td><td><span class="mtn">a medida</span></td></tr>
+          <tr><th scope="row">Bandeja de consultas</th><td><span class="no" role="img" aria-label="No incluido">—</span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td><td><span class="mk" role="img" aria-label="Incluido"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-check"/></svg></span></td></tr>
+          <tr><th scope="row">Mantenimiento mensual</th><td><span class="mtn">opcional</span></td><td><span class="mtn">incluido</span></td><td><span class="mtn">a medida</span></td></tr>
         </tbody>
       </table>
     </details>
@@ -655,7 +731,7 @@ html{touch-action:manipulation}
         <dl class="qa">
           <div><dt>¿Tiene costo ver cómo quedaría?</dt><dd>No. Primero te mostramos tu ferretería y después decidís.</dd></div>
           <div><dt>¿Cuánto sale?</dt><dd>Depende del plan que elijas. Te pasamos los valores por WhatsApp, claros y sin vueltas.</dd></div>
-          <div><dt>¿Y el mantenimiento?</dt><dd>Es opcional. Sirve para que horarios, marcas y datos sigan al día sin que te ocupes.</dd></div>
+          <div><dt>¿Y el mantenimiento?</dt><dd>En Ficha propia es opcional. En Catálogo y pedidos va incluido en un abono mensual, junto con la bandeja de consultas.</dd></div>
         </dl>
       </div>
     </div>
@@ -748,11 +824,12 @@ html{touch-action:manipulation}
   <div class="wrap">
     <div class="sec-head">
       <p class="kicker rv">En acción</p>
-      <h2 class="rv" style="--d:1">Dos cosas que pasan todos los días</h2>
+      <h2 class="rv" style="--d:1">Tres cosas que pasan todos los días</h2>
     </div>
-    <div class="seg rv" role="tablist" aria-label="Elegí un caso">
-      <button role="tab" id="tab-a" aria-selected="true" aria-controls="pa" data-tab="a"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-camera"/></svg>No sé cómo se llama</button>
-      <button role="tab" id="tab-b" aria-selected="false" aria-controls="pb" data-tab="b"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-moon"/></svg>Fuera de horario</button>
+    <div class="seg rv" id="extrasTabs" role="tablist" aria-label="Elegí un caso">
+      <button role="tab" id="tab-a" aria-selected="true" aria-controls="pa" data-tab="a">No sé cómo se llama</button>
+      <button role="tab" id="tab-o" aria-selected="false" aria-controls="po" data-tab="o">Lista de obra</button>
+      <button role="tab" id="tab-b" aria-selected="false" aria-controls="pb" data-tab="b">Fuera de horario</button>
     </div>
 
     <div class="panel two" id="pa" role="tabpanel" aria-labelledby="tab-a">
@@ -763,14 +840,31 @@ html{touch-action:manipulation}
         <p class="lead dk" style="margin-top:14px;font-weight:700;color:var(--graphite)">Menos vueltas para el cliente. Más oportunidades de venta para vos.</p>
       </div>
       <div>
-        <div class="phone" aria-label="Ejemplo de conversación por WhatsApp">
-          <div class="ph-top"><div class="av" id="phAv">F</div><div><b id="phName">Tu ferretería</b><small>en línea</small></div></div>
+        <div class="phone" aria-label="Ejemplo de conversación">
+          <div class="ph-top"><div class="av bizav" id="phAv">F</div><div><b class="bizname" id="phName">Tu ferretería</b><small>en línea</small></div></div>
           <div class="chat" id="chat" aria-live="polite"></div>
           <div class="ph-foot"><span>Escribí un mensaje</span><i><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-send"/></svg></i></div>
         </div>
-        <p class="fl" style="margin-top:26px;text-align:center">Elegí otra pieza para consultar</p>
+        <div class="gorow"><button class="btn goown" id="goA" type="button" hidden>Ver lo que le llega al dueño <svg class="ic-svg down" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button></div>
+        <p class="fl" style="margin-top:22px;text-align:center">Elegí otra pieza para consultar</p>
         <div class="picker" id="picker"></div>
         <div style="text-align:center"><button class="replay" id="replay" type="button"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-refresh"/></svg>Ver de nuevo</button></div>
+      </div>
+    </div>
+
+    <div class="panel two" id="po" role="tabpanel" aria-labelledby="tab-o" hidden>
+      <div>
+        <h3>“Te paso la lista de la obra”</h3>
+        <p class="lead" style="margin-top:14px">Las obras compran todo junto. Que la lista llegue entera y no se pierda en el chat.</p>
+      </div>
+      <div>
+        <div class="phone" aria-label="Ejemplo de conversación con una lista de obra">
+          <div class="ph-top"><div class="av bizav">F</div><div><b class="bizname">Tu ferretería</b><small>en línea</small></div></div>
+          <div class="chat" id="chatO" aria-live="polite"></div>
+          <div class="ph-foot"><span>Escribí un mensaje</span><i><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-send"/></svg></i></div>
+        </div>
+        <div class="gorow"><button class="btn goown" id="goO" type="button" hidden>Ver lo que le llega al dueño <svg class="ic-svg down" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button></div>
+        <div style="text-align:center"><button class="replay" id="replayO" type="button"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-refresh"/></svg>Ver de nuevo</button></div>
       </div>
     </div>
 
@@ -791,6 +885,35 @@ html{touch-action:manipulation}
           <span class="ic"><svg class="ic-svg" viewBox="0 0 24 24"><use href="#i-clock"/></svg></span>
           <div><b id="tTitle">Abierto · cierra 20:00 hs</b><p id="tText"></p><button type="button" id="tBtn">Dejar mi consulta</button><div class="sent" id="tSent" hidden></div></div>
         </div>
+        <div class="chat mini" id="tFlow" aria-live="polite"></div>
+        <div class="gorow"><button class="btn goown" id="goB" type="button" hidden>Ver lo que le llega al dueño <svg class="ic-svg down" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6 · DEL OTRO LADO DEL MOSTRADOR ===================== -->
+<section class="sec cream" id="dueno">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker rv">La vista del dueño</p>
+      <h2 class="rv" style="--d:1">Del otro lado del mostrador</h2>
+      <p class="lead rv" style="--d:2">Cada consulta te llega ordenada, con estado y seguimiento. Probalo: respondé una tarjeta, pasala de estado y adelantá dos días.</p>
+    </div>
+    <div class="two own rv">
+      <ol class="own-copy dk">
+        <li><b>Llega la consulta</b> con lo que el cliente necesita, para cuándo y cómo.</li>
+        <li><b>Respondés con un toque</b> y ves el mensaje que se enviaría.</li>
+        <li><b>El seguimiento te avisa</b> cuando una consulta queda sin respuesta.</li>
+        <li><b>Sabés por qué se cae una venta:</b> precio, no había o no contestó.</li>
+      </ol>
+      <div class="phone own-phone" aria-label="Bandeja de consultas del dueño, ejemplo">
+        <div class="ph-top"><div class="av bizav" id="ownAv">T</div><div><b class="bizname" id="ownName">Tu ferretería</b><small>Bandeja de consultas</small></div><span class="badge" id="ownBadge">0 nuevas</span></div>
+        <div class="offb" id="offBanner" role="status" hidden><span id="offTxt"></span><button type="button" id="offOk">Entendido</button></div>
+        <div class="sumrow" id="sum" aria-label="Resumen de la semana"></div>
+        <div class="toolrow"><button type="button" class="btn ghost sm" id="adv">Adelantar 2 días</button><span id="dayTxt">Día 0</span></div>
+        <div class="tray" id="tray"></div>
+        <div class="sr" id="trayLive" aria-live="polite"></div>
       </div>
     </div>
   </div>
@@ -850,6 +973,9 @@ const CONFIG = {
   plazo: 'Queda funcionando. Si querés, un mantenimiento mensual la mantiene al día.'   // PENDIENTE: plazos en días
 };
 
+const BIZ_PARAM = (new URLSearchParams(location.search).get('n') || '').replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, 40);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+if (BIZ_PARAM) CONFIG.mensajeBase = 'Hola! Soy de ' + BIZ_PARAM + '. ' + CONFIG.mensajeBase.replace(/^Hola!\s*/, '');
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -870,10 +996,14 @@ function openWA(msg) {
   if (!num) { copy(msg); toast('Mensaje copiado. Falta cargar el WhatsApp de destino.'); return; }
   window.open('https://wa.me/' + num + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
 }
-$$('[data-wa]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openWA(CONFIG.mensajeBase); }));
+const waNum = (CONFIG.whatsapp || '').replace(/\D/g, '');
+$$('[data-wa]').forEach(a => {
+  if (waNum) { a.href = 'https://wa.me/' + waNum + '?text=' + encodeURIComponent(CONFIG.mensajeBase); a.target = '_blank'; a.rel = 'noopener'; }
+  else a.addEventListener('click', e => { e.preventDefault(); openWA(CONFIG.mensajeBase); });
+});
 const PLANS = {
   ficha: 'Me interesa el plan Ficha propia: una página propia con mi información, mi calificación de Google y consulta directa por WhatsApp.',
-  catalogo: 'Me interesa el plan Catálogo y pedidos: mis productos más vendidos y que mis clientes armen su pedido por WhatsApp.',
+  catalogo: 'Me interesa el plan Catálogo y pedidos: mis productos más vendidos y una bandeja para ordenar las consultas de mis clientes.',
   medida: 'Me interesa una solución a medida: ordenar presupuestos, listas de precios o tareas repetitivas.'
 };
 const planTabs = $$('[data-ptab]');
@@ -915,7 +1045,7 @@ addEventListener('scroll', onScroll, { passive: true }); onScroll();
 /* botón flotante: visible fuera del hero, de la demo y del cierre */
 const hideSecs = new Set();
 const fabIO = new IntersectionObserver(es => es.forEach(e => { e.isIntersecting ? hideSecs.add(e.target.id) : hideSecs.delete(e.target.id); $('#fab').classList.toggle('on', hideSecs.size === 0 && scrollY > 200); }), { threshold: .25 });
-['inicio', 'ficha', 'contacto'].forEach(id => fabIO.observe($('#' + id)));
+['inicio', 'ficha', 'extras', 'dueno', 'contacto'].forEach(id => fabIO.observe($('#' + id)));
 
 /* ================== datos de la ficha ================== */
 const ROWS = [
@@ -992,8 +1122,8 @@ function paintCard(card, S, active) {
 
 /* ================== 1 · HERO: búsqueda animada ================== */
 const heroCard = $('#heroCard'); buildCard(heroCard);
-const HERO_FULL = { name: '', open: 'corrido', hour: 11, where: 'Alta Córdoba', brands: ['Bosch', 'Stanley', 'Black+Decker'], cats: ['Herramientas eléctricas', 'Herramientas manuales'], ship: 'ciudad', pay: ['Débito', 'Crédito', 'Mercado Pago / QR'], wa: 'si' };
-const emptyState = () => ({ name: '', open: null, hour: 11, where: null, brands: [], cats: [], ship: null, pay: [], wa: null });
+const HERO_FULL = { name: BIZ_PARAM, open: 'corrido', hour: 11, where: 'Alta Córdoba', brands: ['Bosch', 'Stanley', 'Black+Decker'], cats: ['Herramientas eléctricas', 'Herramientas manuales'], ship: 'ciudad', pay: ['Débito', 'Crédito', 'Mercado Pago / QR'], wa: 'si' };
+const emptyState = () => ({ name: BIZ_PARAM, open: null, hour: 11, where: null, brands: [], cats: [], ship: null, pay: [], wa: null });
 const qch = $('#qchips');
 qch.innerHTML = ROWS.map(r => `<span class="qchip">${r.q}${ICON('check')}</span>`).join('');
 const qchips = $$('.qchip', qch);
@@ -1101,8 +1231,10 @@ function paintAll() {
   const c = $('.wz-count', wz); if (c) c.textContent = n + ' de 7';
   $$('.pdots button', wz).forEach((b, i) => { b.classList.toggle('cur', i === cur); b.classList.toggle('done', i !== cur && (i === 0 ? !!(S.name || '').trim() : isAnswered[STEPS[i].k](S))); });
   paintTime();
-  $('#phName').textContent = (S.name || '').trim() || 'Tu ferretería';
-  $('#phAv').textContent = (((S.name || '').trim() || 'T')[0]).toUpperCase();
+  const biz = (S.name || '').trim() || 'Tu ferretería';
+  $$('.bizname').forEach(e => { e.textContent = biz; });
+  $$('.bizav').forEach(e => { e.textContent = biz[0].toUpperCase(); });
+  paintOwn();
 }
 
 function renderStep() {
@@ -1113,12 +1245,12 @@ function renderStep() {
   if (cur >= STEPS.length) {
     const n = countAnswered(S);
     body = `<div class="wz-body res"><h3>${n === 7 ? '¡Tu ficha está completa!' : 'Tu ficha va por ' + n + ' de 7'}</h3>
-      <ul>${(S.name || '').trim() ? `<li><b>${S.name.trim()}</b></li>` : ''}${S.where ? `<li>${S.where}${S.open ? ' · ' + PRESETS[S.open].sub : ''}</li>` : ''}${S.brands.length ? `<li>${list(S.brands, 4)}</li>` : ''}${S.ship ? `<li>${SHIP[S.ship]}</li>` : ''}</ul>
+      <ul>${(S.name || '').trim() ? `<li><b>${esc(S.name.trim())}</b></li>` : ''}${S.where ? `<li>${esc(S.where)}${S.open ? ' · ' + PRESETS[S.open].sub : ''}</li>` : ''}${S.brands.length ? `<li>${list(S.brands, 4)}</li>` : ''}${S.ship ? `<li>${SHIP[S.ship]}</li>` : ''}</ul>
       <div class="stack"><button type="button" class="btn" data-act="wa">${ICON('chat')}Quiero esta ficha para mi ferretería</button><button type="button" class="btn ghost" data-act="copy">Copiar el mensaje</button><button type="button" class="btn ghost" data-act="edit">Editar respuestas</button></div>
       <p class="note">Es una vista de ejemplo con tus datos. En la propuesta real la armamos con la información verificada de tu negocio y de tu perfil. Mostrarte cómo quedaría tu ferretería es sin costo.</p></div>`;
   } else if (st.kind === 'text') {
     body = `<div class="wz-body"><h3>¿Cómo se llama tu ferretería?</h3><p class="hint">Así aparece en tu ficha. Podés saltear este paso.</p>
-      <label class="sr" for="fName">Nombre de la ferretería</label><input class="fld" id="fName" type="text" maxlength="36" autocomplete="off" enterkeyhint="next" placeholder="Ej.: Ferretería El Tornillo" value="${(S.name || '').replace(/"/g, '&quot;')}"></div>
+      <label class="sr" for="fName">Nombre de la ferretería</label><input class="fld" id="fName" type="text" maxlength="36" autocomplete="off" enterkeyhint="next" placeholder="Ej.: Ferretería El Tornillo"></div>
       <div class="wz-nav"><button type="button" class="btn" data-act="next">${(S.name || '').trim() ? 'Siguiente' : 'Saltear'} ${ICON('arrow')}</button></div>`;
   } else {
     const press = id => st.kind === 'multi' ? S[st.k].includes(id) : S[st.k] === id;
@@ -1126,11 +1258,13 @@ function renderStep() {
     let controls;
     if (st.cls === 'one') controls = `<div class="opts" role="group" aria-label="${q}">${st.opts.map(o => `<button type="button" class="opt" data-act="opt" data-id="${o.id}" aria-pressed="${press(o.id)}"><b>${o.label}</b>${o.sub ? `<small>${o.sub}</small>` : ''}</button>`).join('')}</div>`;
     else controls = `<div class="chips" role="group" aria-label="${q}">${st.opts.map(o => `<button type="button" class="chip" data-act="opt" data-id="${o.id}" aria-pressed="${press(o.id)}">${o.label}</button>`).join('')}</div>` +
-      (st.k === 'where' ? `<label class="sr" for="fWhere">Otro barrio</label><input class="fld sm" id="fWhere" type="text" maxlength="28" autocomplete="off" placeholder="¿Otro barrio? Escribilo acá" value="${S.where && !BARRIOS.includes(S.where) ? S.where.replace(/"/g, '&quot;') : ''}">` : '');
+      (st.k === 'where' ? `<label class="sr" for="fWhere">Otro barrio</label><input class="fld sm" id="fWhere" type="text" maxlength="28" autocomplete="off" placeholder="¿Otro barrio? Escribilo acá">` : '');
     body = `<div class="wz-body"><h3>${q}</h3><p class="hint">${st.hint}</p>${controls}</div>
       <div class="wz-nav"><button type="button" class="btn ghost back" data-act="back" aria-label="Volver">${ICON('back')}</button><button type="button" class="btn" data-act="next">${cur === STEPS.length - 1 ? 'Ver mi ficha' : 'Siguiente'} ${ICON('arrow')}</button></div>`;
   }
   wz.innerHTML = top + body;
+  const fn = $('#fName', wz); if (fn) fn.value = S.name || '';
+  const fw = $('#fWhere', wz); if (fw && S.where && !BARRIOS.includes(S.where)) fw.value = S.where;
   paintAll();
 }
 function go(i) { cur = Math.max(0, Math.min(STEPS.length, i)); renderStep(); }
@@ -1173,40 +1307,214 @@ demoCard.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === 
 
 /* ================== 5a · chat: "no sé cómo se llama" ================== */
 const PIECES = {
-  codo: { name: 'Codo de bronce', reply: 'Es un codo de bronce de ¾". Sí, lo tenemos. ¿Cuántos necesitás?', svg: `<rect width="120" height="90" fill="url(#ph-bg)"/><path d="M34 18 V54 Q34 66 46 66 H92" stroke="url(#brass)" stroke-width="17" fill="none"/><path d="M29 22 V54 Q29 71 46 71 H92" stroke="#F4DFA0" stroke-width="2.5" fill="none" opacity=".7"/><rect x="22" y="10" width="24" height="11" rx="2.5" fill="#CFA23F"/><rect x="88" y="55" width="11" height="22" rx="2.5" fill="#CFA23F"/>` },
-  bisagra: { name: 'Bisagra', reply: 'Es una bisagra de 3". La tenemos en hierro y en latón. ¿Cuál preferís?', svg: `<rect width="120" height="90" fill="url(#ph-bg)"/><rect x="20" y="18" width="34" height="54" rx="4" fill="#8E8AA0"/><rect x="66" y="18" width="34" height="54" rx="4" fill="#8E8AA0"/><rect x="52" y="16" width="16" height="58" rx="8" fill="#6F6B84"/><g fill="#EEEAFB"><circle cx="31" cy="30" r="3"/><circle cx="31" cy="60" r="3"/><circle cx="89" cy="30" r="3"/><circle cx="89" cy="60" r="3"/></g>` },
-  mecha: { name: 'Mecha', reply: 'Es una mecha para hormigón de 8 mm, la tenemos de Bosch. ¿Te la guardo?', svg: `<rect width="120" height="90" fill="url(#ph-bg)"/><rect x="12" y="40" width="30" height="11" rx="2" fill="#6F6B84"/><rect x="42" y="38" width="56" height="15" fill="#8E8AA0"/><g stroke="#E3DEF4" stroke-width="3.2"><path d="M50 38 58 53M60 38 68 53M70 38 78 53M80 38 88 53"/></g><path d="M98 38 114 45.5 98 53Z" fill="#8E8AA0"/>` }
+  codo: { name: 'Codo de bronce', reply: 'Es un codo de bronce de ¾". Sí, lo tenemos.', svg: `<rect width="120" height="90" fill="url(#ph-bg)"/><path d="M34 18 V54 Q34 66 46 66 H92" stroke="url(#brass)" stroke-width="17" fill="none"/><path d="M29 22 V54 Q29 71 46 71 H92" stroke="#F4DFA0" stroke-width="2.5" fill="none" opacity=".7"/><rect x="22" y="10" width="24" height="11" rx="2.5" fill="#CFA23F"/><rect x="88" y="55" width="11" height="22" rx="2.5" fill="#CFA23F"/>` },
+  bisagra: { name: 'Bisagra', reply: 'Es una bisagra de 3". La tenemos en hierro y en latón.', svg: `<rect width="120" height="90" fill="url(#ph-bg)"/><rect x="20" y="18" width="34" height="54" rx="4" fill="#8E8AA0"/><rect x="66" y="18" width="34" height="54" rx="4" fill="#8E8AA0"/><rect x="52" y="16" width="16" height="58" rx="8" fill="#6F6B84"/><g fill="#EEEAFB"><circle cx="31" cy="30" r="3"/><circle cx="31" cy="60" r="3"/><circle cx="89" cy="30" r="3"/><circle cx="89" cy="60" r="3"/></g>` },
+  mecha: { name: 'Mecha', reply: 'Es una mecha para hormigón de 8 mm, la tenemos de Bosch.', svg: `<rect width="120" height="90" fill="url(#ph-bg)"/><rect x="12" y="40" width="30" height="11" rx="2" fill="#6F6B84"/><rect x="42" y="38" width="56" height="15" fill="#8E8AA0"/><g stroke="#E3DEF4" stroke-width="3.2"><path d="M50 38 58 53M60 38 68 53M70 38 78 53M80 38 88 53"/></g><path d="M98 38 114 45.5 98 53Z" fill="#8E8AA0"/>` }
 };
-const picker = $('#picker'), chat = $('#chat');
+const picker = $('#picker'), chat = $('#chat'), chatO = $('#chatO');
 picker.innerHTML = Object.entries(PIECES).map(([id, p], i) => `<button type="button" class="pick" data-p="${id}" aria-pressed="${i === 0}" aria-label="${p.name}"><svg viewBox="0 0 120 90" aria-hidden="true">${p.svg}</svg><span>${p.name}</span></button>`).join('');
-let chatRun = 0, curPiece = 'codo', chatStarted = false;
+
+/* ---- v2 · estado de la bandeja (todo en memoria, nada se envía) ---- */
+const T = { cards: [], day: 0, seq: 0, offUnseen: 0, wasClosed: false };
+const QS = [
+  { k: 'when', q: '¿Para cuándo lo necesitás?', opts: ['Hoy', 'Esta semana', 'Sin apuro'] },
+  { k: 'how',  q: '¿Retirás o te lo enviamos?', opts: ['Retiro', 'Envío'] },
+  { k: 'who',  q: '¿Es para vos o para una obra?', opts: ['Particular', 'Profesional'] }
+];
+const TRIG = { foto: 'camera', obra: 'grid', horario: 'moon' };
+const STATES = { nueva: 'Nueva', respondida: 'Respondida', presupuestada: 'Presupuestada', vendida: 'Vendida', perdida: 'Perdida' };
+const MSGS = {
+  lo_tengo: 'Hola, lo tengo y te lo separo. ¿Pasás hoy?',
+  no_tengo: 'Hola, ahora no lo tengo, pero te lo consigo. Te aviso apenas llegue.',
+  precio: 'Hola, te paso el precio y te lo dejo preparado. ¿Para cuándo lo querés?',
+  recordar: 'Hola, ¿pudiste ver el precio que te pasé? Si querés lo ajusto.'
+};
+const LISTSVG = `<rect width="120" height="90" fill="#FBF7E9"/><g stroke="#D6CFB8" stroke-width=".6"><path d="M6 20H114M6 32H114M6 44H114M6 56H114M6 68H114M6 80H114"/></g><g font-family="cursive" font-style="italic" font-size="8.5" fill="#2B3A67"><text x="9" y="17">Lista de la obra</text><text x="9" y="29">Cemento x 10</text><text x="9" y="41">Cal x 5</text><text x="9" y="53">Hierro del 8 x 12</text><text x="9" y="65">Ladrillos x 300</text><text x="9" y="77">Arena 1 m3</text></g>`;
+const hhmm = () => { try { return new Date().toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit', hour12: false }); } catch (e) { return ''; } };
+const wait = ms => RM ? Promise.resolve() : sleep(ms);
+
+/* ---- chat: burbujas, tres preguntas con botones ---- */
+const mkB = (box, cls, html) => { const d = document.createElement('div'); d.className = 'b ' + cls; d.innerHTML = html; box.appendChild(d); box.scrollTop = box.scrollHeight; return d; };
+const typingOn = box => { const ty = document.createElement('div'); ty.className = 'typing'; ty.innerHTML = '<i></i><i></i><i></i>'; box.appendChild(ty); box.scrollTop = box.scrollHeight; return ty; };
+function choose(box, q, pre) {
+  return new Promise(res => {
+    const d = document.createElement('div'); d.className = 'b shop q';
+    const t = document.createElement('span'); t.className = 'qt'; t.textContent = q.q; d.appendChild(t);
+    const row = document.createElement('span'); row.className = 'chs'; d.appendChild(row);
+    q.opts.forEach(o => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'qb' + (o === pre ? ' pre' : ''); b.textContent = o;
+      b.addEventListener('click', () => { $$('button', row).forEach(x => { x.disabled = true; }); b.classList.add('sel'); res(o); });
+      row.appendChild(b);
+    });
+    box.appendChild(d); box.scrollTop = box.scrollHeight;
+  });
+}
+async function askThree(box, alive, pre = {}) {
+  const ans = {};
+  for (const q of QS) {
+    const o = await choose(box, q, pre[q.k]);
+    if (!alive()) return null;
+    ans[q.k] = o;
+    mkB(box, 'me', esc(o));
+    if (q !== QS[QS.length - 1]) { await wait(350); if (!alive()) return null; }
+  }
+  return ans;
+}
+
+/* ---- bandeja del dueño ---- */
+function addCard(trigger, title, ans, extra = {}) {
+  const c = Object.assign({ id: 'c' + (++T.seq), trigger, title, when: ans.when, how: ans.how, who: ans.who, at: 'Hoy ' + hhmm(), state: 'nueva', answered: false, quoted: false, age: 0, offHours: false, ill: false, msg: null, asking: false, reason: null }, extra);
+  T.cards.unshift(c);
+  const el = buildTC(c); const list = $('#tray'); list.insertBefore(el, list.firstChild);
+  paintOwn(true);
+  $('#trayLive').textContent = '';
+  setTimeout(() => { $('#trayLive').textContent = 'Nueva consulta en la bandeja: ' + title; }, 50);
+  return c;
+}
+function buildTC(c) {
+  const el = document.createElement('article'); el.className = 'tc'; el.dataset.id = c.id; el.tabIndex = -1;
+  const th = document.createElement('div'); th.className = 'th';
+  th.innerHTML = `<span class="ti">${ICON(TRIG[c.trigger])}</span><b class="tt"></b><span class="pill s-${c.state}"></span>`;
+  $('.tt', th).textContent = c.title;
+  $('.pill', th).textContent = STATES[c.state] + (c.state === 'perdida' && c.reason ? ' · ' + c.reason : '');
+  el.appendChild(th);
+  const tm = document.createElement('p'); tm.className = 'tm'; tm.textContent = [c.when, c.how, c.who].filter(Boolean).join(' · ') + ' · ' + c.at; el.appendChild(tm);
+  if (c.svg) { const th2 = document.createElement('div'); th2.className = 'thumb'; th2.innerHTML = '<svg viewBox="0 0 120 90" aria-hidden="true">' + c.svg + '</svg>'; el.appendChild(th2); }
+  if (c.msg) { const m = document.createElement('div'); m.className = 'tmsg'; m.textContent = '“' + c.msg + '”'; const s = document.createElement('small'); s.textContent = 'Vista previa del mensaje. En la demo no se envía nada.'; m.appendChild(s); el.appendChild(m); }
+  if (c.state === 'presupuestada' && c.age >= 2) {
+    const fu = document.createElement('div'); fu.className = 'tfu';
+    const b1 = document.createElement('b'); b1.textContent = 'Sin respuesta hace ' + c.age + ' días'; fu.appendChild(b1);
+    fu.appendChild(document.createTextNode('Mensaje sugerido: “' + MSGS.recordar + '”'));
+    const rb = document.createElement('button'); rb.type = 'button'; rb.textContent = 'Recordar'; rb.addEventListener('click', () => { c.msg = MSGS.recordar; c.age = 0; refreshTC(c); }); fu.appendChild(rb);
+    el.appendChild(fu);
+  }
+  const ta = document.createElement('div'); ta.className = c.asking ? 'why' : 'ta';
+  const add = (label, cls, fn) => { const b = document.createElement('button'); b.type = 'button'; b.textContent = label; if (cls) b.className = cls; b.addEventListener('click', fn); ta.appendChild(b); };
+  if (c.asking) {
+    const q = document.createElement('p'); q.className = 'ask'; q.textContent = '¿Por qué se perdió?'; el.appendChild(q);
+    ['Precio', 'No había', 'No contestó'].forEach(r => add(r, '', () => { c.state = 'perdida'; c.reason = r; c.asking = false; c.msg = null; refreshTC(c); }));
+  } else if (c.state === 'nueva') {
+    add('Lo tengo, te lo separo', 'pri', () => reply(c, 'lo_tengo')); add('No lo tengo, te lo consigo', '', () => reply(c, 'no_tengo')); add('Te paso precio', '', () => reply(c, 'precio'));
+  } else if (c.state === 'respondida') {
+    add('Te paso precio', 'pri', () => reply(c, 'precio')); add('Marcar perdida', 'bad', () => { c.asking = true; refreshTC(c); });
+  } else if (c.state === 'presupuestada') {
+    add('Marcar vendida', 'pri', () => { c.state = 'vendida'; c.msg = null; refreshTC(c); }); add('Marcar perdida', 'bad', () => { c.asking = true; refreshTC(c); });
+  }
+  if (ta.children.length) el.appendChild(ta);
+  if (c.ill) { const i = document.createElement('span'); i.className = 'ill'; i.textContent = 'Datos ilustrativos'; el.appendChild(i); }
+  return el;
+}
+function reply(c, key) {
+  c.msg = MSGS[key];
+  if (key === 'precio') { c.state = 'presupuestada'; c.quoted = true; c.age = 0; } else c.state = 'respondida';
+  c.answered = true;
+  refreshTC(c);
+}
+function refreshTC(c) {
+  const old = $('.tc[data-id="' + c.id + '"]'); const el = buildTC(c);
+  const hadFocus = old && old.contains(document.activeElement);
+  if (old) old.replaceWith(el);
+  if (hadFocus) el.focus({ preventScroll: true });
+  paintOwn();
+}
+function paintOwn(bump) {
+  const nuevas = T.cards.filter(c => c.state === 'nueva').length;
+  const badge = $('#ownBadge'); if (!badge) return;
+  badge.textContent = nuevas + (nuevas === 1 ? ' nueva' : ' nuevas');
+  if (bump) { badge.classList.remove('bump'); void badge.offsetWidth; badge.classList.add('bump'); }
+  const n = (f) => T.cards.filter(f).length;
+  const perd = T.cards.filter(c => c.state === 'perdida');
+  const top = (() => { const m = {}; perd.forEach(c => { m[c.reason] = (m[c.reason] || 0) + 1; }); return Object.entries(m).sort((a, b) => b[1] - a[1])[0]; })();
+  $('#sum').innerHTML = `<div class="sm"><b>${T.cards.length}</b><span>Recibidas</span></div><div class="sm"><b>${n(c => c.answered)}</b><span>Respondidas</span></div><div class="sm"><b>${n(c => c.quoted)}</b><span>Presupuestadas</span></div><div class="sm"><b>${n(c => c.state === 'vendida')}</b><span>Vendidas</span></div><div class="note"><i>Datos ilustrativos</i><span>${perd.length ? 'Perdidas: ' + perd.length + ' · ' + esc(top[0]) : 'Resumen de la semana'}</span></div>`;
+  $('#dayTxt').textContent = 'Día ' + T.day;
+}
+function paintOff(open) {
+  const b = $('#offBanner'); if (!b) return;
+  if (!open) T.wasClosed = true;
+  const show = open && T.wasClosed && T.offUnseen > 0;
+  b.hidden = !show;
+  if (show) $('#offTxt').textContent = T.offUnseen === 1 ? 'Llegó 1 consulta mientras estabas cerrado' : 'Llegaron ' + T.offUnseen + ' consultas mientras estabas cerrado';
+}
+$('#offOk').addEventListener('click', () => { T.offUnseen = 0; $('#offBanner').hidden = true; });
+$('#adv').addEventListener('click', () => {
+  T.day += 2; T.cards.forEach(c => { if (c.state === 'presupuestada') c.age += 2; });
+  const list = $('#tray'); list.textContent = ''; T.cards.forEach(c => list.appendChild(buildTC(c)));
+  paintOwn();
+});
+function preloadTray() {
+  const bis = PIECES.bisagra.svg;
+  T.cards = [
+    { id: 'c' + (++T.seq), trigger: 'horario', title: 'Consulta fuera de horario', when: 'Sin apuro', how: 'Envío', who: 'Particular', at: 'Ayer 22:15', state: 'nueva', answered: false, quoted: false, age: 0, offHours: true, ill: true, msg: null, asking: false, reason: null },
+    { id: 'c' + (++T.seq), trigger: 'obra', title: 'Lista de materiales', when: 'Esta semana', how: 'Envío', who: 'Profesional', at: 'Ayer 11:20', state: 'presupuestada', answered: true, quoted: true, age: 0, offHours: false, ill: true, msg: null, asking: false, reason: null, svg: LISTSVG },
+    { id: 'c' + (++T.seq), trigger: 'foto', title: 'Bisagra de 3"', when: 'Hoy', how: 'Retiro', who: 'Particular', at: 'Ayer 17:40', state: 'respondida', answered: true, quoted: false, age: 0, offHours: false, ill: true, msg: null, asking: false, reason: null, svg: bis }
+  ];
+  T.offUnseen = 1;
+  const list = $('#tray'); list.textContent = ''; T.cards.forEach(c => list.appendChild(buildTC(c)));
+  paintOwn();
+}
+function showGo(btn, id) { btn.hidden = false; btn.dataset.card = id; }
+function goOwner(id) {
+  const el = $('.tc[data-id="' + id + '"]'); if (!el) return;
+  el.scrollIntoView({ behavior: RM ? 'auto' : 'smooth', block: 'center' });
+  setTimeout(() => { el.focus({ preventScroll: true }); el.classList.add('flash'); setTimeout(() => el.classList.remove('flash'), 2000); }, RM ? 0 : 650);
+}
+document.addEventListener('click', e => { const b = e.target.closest('.goown'); if (b && b.dataset.card) goOwner(b.dataset.card); });
+
+/* ---- escena 1 · no sé cómo se llama ---- */
+let runA = 0, curPiece = 'codo', startedA = false;
 async function playChat() {
-  const run = ++chatRun, P = PIECES[curPiece];
-  chat.innerHTML = '';
-  const add = (cls, html) => { const d = document.createElement('div'); d.className = 'b ' + cls; d.innerHTML = html; chat.appendChild(d); };
-  const wait = ms => RM ? Promise.resolve() : sleep(ms);
-  await wait(500); if (run !== chatRun) return;
-  add('me', `<span class="photo"><svg viewBox="0 0 120 90" aria-hidden="true">${P.svg}</svg></span>¿Tienen esta pieza? No sé cómo se llama 😅<span class="time">10:42</span>`);
-  await wait(900); if (run !== chatRun) return;
-  const ty = document.createElement('div'); ty.className = 'typing'; ty.innerHTML = '<i></i><i></i><i></i>'; chat.appendChild(ty);
-  await wait(1500); if (run !== chatRun) return;
-  ty.remove(); add('shop', P.reply + '<span class="time">10:43</span>');
-  await wait(1200); if (run !== chatRun) return;
-  add('me', 'Perfecto, paso en 20 minutos<span class="time">10:43</span>');
+  const run = ++runA, P = PIECES[curPiece], alive = () => run === runA;
+  chat.innerHTML = ''; $('#goA').hidden = true;
+  await wait(500); if (!alive()) return;
+  mkB(chat, 'me', `<span class="photo"><svg viewBox="0 0 120 90" aria-hidden="true">${P.svg}</svg></span>¿Tienen esta pieza? No sé cómo se llama 😅<span class="time">${hhmm()}</span>`);
+  await wait(900); if (!alive()) return;
+  let ty = typingOn(chat); await wait(1400); if (!alive()) return;
+  ty.remove(); mkB(chat, 'shop', P.reply);
+  await wait(800); if (!alive()) return;
+  const ans = await askThree(chat, alive); if (!ans) return;
+  showGo($('#goA'), addCard('foto', P.name, ans, { svg: P.svg }).id);
+  ty = typingOn(chat); await wait(900); if (!alive()) return;
+  ty.remove(); mkB(chat, 'shop', 'Consulta enviada ✓ Te respondemos enseguida.');
 }
 picker.addEventListener('click', e => {
   const b = e.target.closest('.pick'); if (!b) return;
   curPiece = b.dataset.p; $$('.pick', picker).forEach(x => x.setAttribute('aria-pressed', x === b)); playChat();
 });
 $('#replay').addEventListener('click', playChat);
-new IntersectionObserver((es, o) => { if (es[0].isIntersecting && !chatStarted) { chatStarted = true; playChat(); } }, { threshold: .3 }).observe(chat);
+new IntersectionObserver((es, o) => { if (es[0].isIntersecting && !startedA) { startedA = true; playChat(); } }, { threshold: .3 }).observe(chat);
+
+/* ---- escena 2 · lista de obra ---- */
+let runO = 0;
+async function playObra() {
+  const run = ++runO, alive = () => run === runO;
+  chatO.innerHTML = ''; $('#goO').hidden = true;
+  const draft = document.createElement('div'); draft.className = 'draft';
+  draft.innerHTML = `<svg viewBox="0 0 120 90" aria-hidden="true">${LISTSVG}</svg><small>Lista ilustrativa</small>`;
+  const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'btn'; btn.innerHTML = ICON('camera') + 'Mandar foto de la lista';
+  draft.appendChild(btn); chatO.appendChild(draft);
+  await new Promise(r => btn.addEventListener('click', r, { once: true })); if (!alive()) return;
+  draft.remove();
+  mkB(chatO, 'me', `<span class="photo"><svg viewBox="0 0 120 90" aria-hidden="true">${LISTSVG}</svg></span>Te paso la lista de la obra<span class="time">${hhmm()}</span>`);
+  await wait(800); if (!alive()) return;
+  let ty = typingOn(chatO); await wait(1200); if (!alive()) return;
+  ty.remove(); mkB(chatO, 'shop', 'Recibí la lista, la reviso ahora.');
+  await wait(700); if (!alive()) return;
+  const ans = await askThree(chatO, alive, { who: 'Profesional' }); if (!ans) return;
+  showGo($('#goO'), addCard('obra', 'Lista de materiales', ans, { svg: LISTSVG }).id);
+  ty = typingOn(chatO); await wait(900); if (!alive()) return;
+  ty.remove(); mkB(chatO, 'shop', 'Consulta enviada ✓ Te respondemos enseguida.');
+}
+$('#replayO').addEventListener('click', playObra);
 
 /* ================== 5b · fuera de horario ================== */
-const tabs = $$('.seg button');
+const tabs = $$('#extrasTabs button');
+const PANELS = { a: '#pa', o: '#po', b: '#pb' };
 tabs.forEach(t => t.addEventListener('click', () => {
   tabs.forEach(x => x.setAttribute('aria-selected', x === t));
-  $('#pa').hidden = t.dataset.tab !== 'a'; $('#pb').hidden = t.dataset.tab !== 'b';
-  if (t.dataset.tab === 'b') paintTime(); else if (!$('#chat').children.length) playChat();
+  Object.entries(PANELS).forEach(([k, sel]) => { $(sel).hidden = t.dataset.tab !== k; });
+  if (t.dataset.tab === 'b') paintTime();
+  else if (t.dataset.tab === 'a' && !chat.children.length) playChat();
+  else if (t.dataset.tab === 'o' && !chatO.children.length) playObra();
 }));
 $('#tChange').addEventListener('click', () => { go(1); $('#ficha').scrollIntoView({ behavior: RM ? 'auto' : 'smooth' }); });
 const SKY = [[0, [31, 35, 40]], [5.5, [58, 63, 72]], [7, [242, 140, 40]], [9, [226, 224, 214]], [12, [207, 216, 227]], [16, [226, 224, 214]], [18.5, [242, 140, 40]], [20.5, [58, 63, 72]], [24, [31, 35, 40]]];
@@ -1235,17 +1543,27 @@ function paintTime() {
   box.querySelector('.ic').innerHTML = ICON(st.open ? 'sun' : 'moon');
   $('#tTitle').textContent = st.open ? 'Abierto · cierra ' + fmt(st.until) + ' hs' : 'Cerrado · abre ' + (st.tomorrow ? 'mañana ' : '') + fmt(st.next) + ' hs';
   $('#tText').textContent = st.open ? 'Quien te busca ve que estás atendiendo y puede escribirte ahora.' : 'A las ' + fmt(h) + ' alguien te encuentra, ve que abrís ' + (st.tomorrow ? 'mañana ' : '') + 'a las ' + fmt(st.next) + ' y te deja su consulta.';
-  $('#tBtn').hidden = st.open;
+  $('#tBtn').hidden = st.open || flowB;
   const sent = $('#tSent'); if (st.open) { consultSent = false; sent.hidden = true; } else sent.hidden = !consultSent;
+  paintOff(st.open);
 }
-$('#hr').addEventListener('input', e => { S.hour = +e.target.value; consultSent = false; paintAll(); });
-$('#tBtn').addEventListener('click', () => {
-  consultSent = true;
+let flowB = false, runB = 0;
+$('#hr').addEventListener('input', e => { S.hour = +e.target.value; consultSent = false; runB++; flowB = false; $('#tFlow').innerHTML = ''; paintAll(); });
+$('#tBtn').addEventListener('click', async () => {
+  if (flowB) return;
+  flowB = true; const run = ++runB, alive = () => run === runB, mini = $('#tFlow');
+  mini.innerHTML = ''; $('#tBtn').hidden = true;
+  const ans = await askThree(mini, alive); if (!ans) return;
   const st = statusAt(S.hour, (PRESETS[S.open] || PRESETS.corrido).ints);
-  const sent = $('#tSent'); sent.textContent = 'Consulta guardada. Te la respondemos ' + (st.tomorrow ? 'mañana ' : '') + 'a las ' + fmt(st.next) + ' hs.'; sent.hidden = false;
+  consultSent = true; flowB = false;
+  const sent = $('#tSent'); sent.textContent = 'Consulta enviada. Te la respondemos ' + (st.tomorrow ? 'mañana ' : '') + 'a las ' + fmt(st.next) + ' hs.'; sent.hidden = false;
+  mini.innerHTML = '';
+  T.offUnseen++;
+  showGo($('#goB'), addCard('horario', 'Consulta fuera de horario', ans, { offHours: true, at: 'Hoy ' + fmt(S.hour) + ' hs' }).id);
 });
 
 /* ================== arranque ================== */
+preloadTray();
 renderStep();
 if (matchMedia('(min-width: 900px)').matches) { const d = $('#cmpd'); if (d) d.open = true; }
 })();
